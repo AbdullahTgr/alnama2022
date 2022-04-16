@@ -67,6 +67,7 @@ Route::get('/logout', function(){
 
  Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
  Route::get('/admin/cats', [App\Http\Controllers\AdminController::class, 'cats'])->name('admin.cats');
+ Route::get('/admin/quickmsg', [App\Http\Controllers\AdminController::class, 'quickmsg'])->name('admin.quickmsg');
  Route::get('/admin/products', [App\Http\Controllers\AdminController::class, 'products'])->name('admin.products');
  Route::get('/admin/profile', [App\Http\Controllers\AdminController::class, 'profile'])->name('admin.profile');
 
@@ -78,6 +79,7 @@ Route::get('/logout', function(){
  Route::post('/admin/save_cat', [App\Http\Controllers\AdminController::class, 'save_cat'])->name('admin.save_cat');
  Route::post('/admin/update_cat', [App\Http\Controllers\AdminController::class, 'update_cat'])->name('admin.update_cat');
  Route::post('/admin/delete_cat', [App\Http\Controllers\AdminController::class, 'delete_cat'])->name('admin.delete_cat');
+ Route::post('/admin/delete_msg', [App\Http\Controllers\AdminController::class, 'delete_msg'])->name('admin.delete_msg');
 
  Route::post('/admin/save_product', [App\Http\Controllers\AdminController::class, 'save_product'])->name('admin.save_product');
  Route::post('/admin/update_product', [App\Http\Controllers\AdminController::class, 'update_product'])->name('admin.update_product');

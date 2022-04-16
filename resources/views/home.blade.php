@@ -189,8 +189,8 @@ text-align:right ;
     text-align: center;
                     ">
                         <h3 class="text-white">{{ trans('sentence.sendusmsg')}}</h3>
-                    </div>
-                    <div class="card-body">
+                    </div> 
+                    <div class="card-body"> 
                         
                         @if(Session::has('success'))
                         <div class="alert alert-success">
@@ -207,7 +207,7 @@ text-align:right ;
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <strong>{{ trans('sentence.name')}}:</strong>
-                                        <input type="text" name="name" class="form-control" placeholder="{{ trans('sentence.name')}}" value="{{ old('name') }}">
+                                        <input type="text" required name="name" class="form-control" placeholder="{{ trans('sentence.name')}}" value="{{ old('name') }}">
                                         @if ($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
@@ -227,7 +227,7 @@ text-align:right ;
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <strong>{{ trans('sentence.phone')}}:</strong>
-                                        <input type="text" name="phone" class="form-control" placeholder="{{ trans('sentence.phone')}}" value="{{ old('phone') }}">
+                                        <input type="text" required name="phone" class="form-control" placeholder="{{ trans('sentence.phone')}}" value="{{ old('phone') }}">
                                         @if ($errors->has('phone'))
                                             <span class="text-danger">{{ $errors->first('Phone') }}</span>
                                         @endif

@@ -67,7 +67,7 @@ $langu='ar'
 @if ($langu=="ar")
 
     @if(substr(last(request()->segments()),0,4)=='cats'||substr(last(request()->segments()),0,4)=='dash'||substr(last(request()->segments()),0,4)=='prod'||substr(last(request()->segments()),0,4)=='prof'
-    ||substr(last(request()->segments()),0,4)=='part' ||substr(last(request()->segments()),0,4)=='clin'||substr(last(request()->segments()),0,4)=='cont')
+    ||substr(last(request()->segments()),0,4)=='part' ||substr(last(request()->segments()),0,8)=='quickmsg' ||substr(last(request()->segments()),0,4)=='clin'||substr(last(request()->segments()),0,4)=='cont')
          <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @else
         <link href="{{ asset('css/app.ar.css') }}" rel="stylesheet">   

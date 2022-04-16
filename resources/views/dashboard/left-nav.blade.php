@@ -1,3 +1,4 @@
+
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
@@ -17,9 +18,15 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>الرئيسية</span></a>
     </li>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="{{route('admin.quickmsg')}}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>الرسائل السريعة</span></a>
+    </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider"> 
 
     <!-- Heading -->
     <div class="sidebar-heading">

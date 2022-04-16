@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cat;
+use App\Models\Msgmail;
 use App\Models\Product;
 use App\Models\Image;
 use App\Models\User;
@@ -63,7 +64,22 @@ class AdminController extends Controller
 $langu=$this->language();
         return view('dashboard.cats.index',compact('cats','langu'));
     }
+    public function quickmsg()
+    {
+        $quickmsg = Msgmail::get(); 
+$langu=$this->language();
+        return view('dashboard.quickmsg.index',compact('quickmsg','langu'));
+    }
 
+
+    public function delete_msg(Request $request)
+    {
+
+        $cat = Msgmail::where('id',$request->msg_id)->delete();
+        //$cat->save();
+      
+           return redirect()->back();
+     }
 
     public function save_cat(Request $request)
     {

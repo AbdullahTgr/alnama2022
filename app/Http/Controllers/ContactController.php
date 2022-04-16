@@ -12,14 +12,14 @@ class ContactController extends Controller
     
     public function storeContactForm(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required|digits:10|numeric',
-            'subject' => 'required',
-            'message' => 'required',
-        ]);
-
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email',
+        //     'phone' => 'required|digits:10|numeric',
+        //     'subject' => 'required',
+        //     'message' => 'required',
+        // ]);
+          
         $input = $request->all();
 
        Msgmail::create($input);
@@ -29,13 +29,13 @@ class ContactController extends Controller
             'name' => $input['name'],
             'email' => $input['email'],
             'phone' => $input['phone'],
-            'subject' => $input['subject'],
+            'subject' => "رسالة جديدة من مستخدم",
             'message' => $input['message'],
         ), function($message) use ($request){
-            $message->from($request->email);
+            $message->from("abdooo.mostafa5@gmail.com");
             $message->to('4multijob@gmail.com', 'Admin')->subject($request->get('subject'));
         });
 
-        return redirect()->back()->with(['success' => 'Contact Form Submit Successfully']);
+        return redirect()->back()->with(['success' => 'تم الارسال بنجاح']);
     }
 }
